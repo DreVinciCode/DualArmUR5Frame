@@ -400,6 +400,7 @@ Transform:
   m_Children:
   - {fileID: 1143180336}
   - {fileID: 373473716}
+  - {fileID: 1861406222}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -722,6 +723,6 @@ Transform:
   m_LocalPosition: {x: -0.693, y: 0.951, z: -0.288}
   m_LocalScale: {x: 0.118332535, y: 0.118332535, z: 0.118332535}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 744311903}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 43.594}
