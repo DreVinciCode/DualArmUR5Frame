@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QCARInfo>
+    <TargetSet version="33.0" toolVersion="v5.3.0-1-g8adbdbe">
+        <ModelTarget name="DualArmUR5Frame" targetId="7aec979923884d95927cef8b3976de72" version="13.0" toolVersion="v5.3.0-1-g8adbdbe" bbox="-0.912421 -0.000703 -0.733032 0.000703 1.440738 0.000703" trackingMode="default" upVector="0.0 1.0 0.0" />
+    </TargetSet>
+    <Assembly name="DualArmUR5Frame" assemblyId="b1e579c191a44137ba6b91fd522b836b">
+        <Part name="DualArmUR5Frame" translation="0 0 0" rotation="AD: 0 0 1 0" />
+        <EntryPoint name="(none)" trained="yes" />
+    </Assembly>
+</QCARInfo>
