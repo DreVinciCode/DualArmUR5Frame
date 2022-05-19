@@ -13,6 +13,18 @@ namespace RosSharp.RosBridgeClient
 
         public Transform[] JointGroup;
 
+        private void Start()
+        {
+            /*
+             * rt_shoulder_pan: 2.005
+             * rt_shoulder_lift: -2.18
+             * rt_elbow: -1.166
+             * rt_wrist_1: 3.14
+             * rt_wrist_2: -0.106
+             * rt_wrist_3: -1.836
+             * */
+        }
+
         private void Update()
         {
             if (isMessageReceived)

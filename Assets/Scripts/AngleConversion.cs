@@ -12,21 +12,35 @@ public class AngleConversion : MonoBehaviour
     * rt_wrist_2: -0.106
     * rt_wrist_3: -1.836
     * */
-    public Transform Shoulder_Pan;
-    public Transform Shoulder_Tilt;
-    public Transform Elbow;
-    public Transform Wrist_1;
-    public Transform Wrist_2;
-    public Transform Wrist_3;
+    public Transform Left_Shoulder_Pan;
+    public Transform Left_Shoulder_Tilt;
+    public Transform Left_Elbow;
+    public Transform Left_Wrist_1;
+    public Transform Left_Wrist_2;
+    public Transform Left_Wrist_3;
+
+    public Transform Right_Shoulder_Pan;
+    public Transform Right_Shoulder_Tilt;
+    public Transform Right_Elbow;
+    public Transform Right_Wrist_1;
+    public Transform Right_Wrist_2;
+    public Transform Right_Wrist_3;
 
     private void Start()
     {
-        Shoulder_Pan.localEulerAngles = new Vector3(0, 0, RadianToDegree(2.005f));
-        Shoulder_Tilt.localEulerAngles = new Vector3(0, RadianToDegree(-2.10f), 0);
-        Elbow.localEulerAngles = new Vector3(0, RadianToDegree(-1.166f), 0);
-        Wrist_1.localEulerAngles = new Vector3(0,RadianToDegree(3.14f), 0);
-        Wrist_2.localEulerAngles = new Vector3(0, 0, RadianToDegree(-0.106f));
-        Wrist_3.localEulerAngles = new Vector3(0, RadianToDegree(-1.836f), 0);
+        Left_Shoulder_Pan.localEulerAngles = new Vector3(0, 0, RadianToDegree(2.005f));
+        Left_Shoulder_Tilt.localEulerAngles = new Vector3(0, RadianToDegree(-2.10f), 0);
+        Left_Elbow.localEulerAngles = new Vector3(0, RadianToDegree(-1.166f), 0);
+        Left_Wrist_1.localEulerAngles = new Vector3(0,RadianToDegree(3.14f), 0);
+        Left_Wrist_2.localEulerAngles = new Vector3(0, 0, RadianToDegree(-0.106f));
+        Left_Wrist_3.localEulerAngles = new Vector3(0, RadianToDegree(-1.836f), 0);
+
+        Right_Shoulder_Pan.localEulerAngles = new Vector3(0, 0, RadianToDegree(2.005f));
+        Right_Shoulder_Tilt.localEulerAngles = new Vector3(0, RadianToDegree(-2.10f), 0);
+        Right_Elbow.localEulerAngles = new Vector3(0, RadianToDegree(-1.166f), 0);
+        Right_Wrist_1.localEulerAngles = new Vector3(0, RadianToDegree(3.14f), 0);
+        Right_Wrist_2.localEulerAngles = new Vector3(0, 0, RadianToDegree(-0.106f));
+        Right_Wrist_3.localEulerAngles = new Vector3(0, RadianToDegree(-1.836f), 0);
     }
 
     private void Update()
