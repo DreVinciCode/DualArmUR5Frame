@@ -76,7 +76,7 @@ namespace RosSharp.RosBridgeClient
             for (int i = 0; i < _jointLength; i++)
             {
                 var arm_transform = JointName_Dictionary[_jointNames[i]];
-                arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[i]], (float)_positions[i] + JointOffset_Dictionary[_jointNames[i]]);
+                arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[i]], -1 * (float)_positions[i] + JointOffset_Dictionary[_jointNames[i]]);
             }
 
             isMessageReceived = false;
