@@ -1,4 +1,4 @@
-# Unity DAURAR (Dual-Arm-Univeral-Robot5-Augmented-Reality)
+# Unity DAURAR (Dual-Arm-Universal-Robot5-Augmented-Reality)
 
 ### This repo is the Unity component for the DAURAR project for the Dual-Arm UR5 manipulators in the MuLIP lab at Tufts University.
 
