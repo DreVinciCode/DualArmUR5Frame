@@ -7,3 +7,5 @@ Used USB drive to manually transfered file and added file type to gitignore file
 
 ![Alt text](demos/future_plan.gif)
 <br/> Short demos of Current Progress
+
+## Project is deployed on Andriod 
