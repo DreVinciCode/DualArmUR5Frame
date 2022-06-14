@@ -1,15 +1,18 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace RosSharp.RosBridgeClient
 {
-    public class JointTrajectoryControllerStatePublisher : MonoBehaviour
+    public class DisplayTrajectoryPublisher : MonoBehaviour
     {
         private bool isMessageReceived;
-        private int _jointLength;
-        private double[] _positions;
+        private MessageTypes.Moveit.RobotTrajectory[] _trajectory;
+        
+        private float[] _positions;
         private string[] _jointNames;
+        private int _totalPoints;
 
         public string prefix = "";
         public Transform Shoulder_Pan;
@@ -30,7 +33,6 @@ namespace RosSharp.RosBridgeClient
         Dictionary<string, Vector3> JointAxis_Dictionary = new Dictionary<string, Vector3>();
         Dictionary<string, float> JointOffset_Dictionary = new Dictionary<string, float>();
 
-
         private void Start()
         {
             JointName_Dictionary.Add(prefix + "shoulder_pan_joint", Shoulder_Pan);
@@ -43,7 +45,7 @@ namespace RosSharp.RosBridgeClient
             JointAxis_Dictionary.Add(prefix + "shoulder_pan_joint", Vector3.forward);
             JointAxis_Dictionary.Add(prefix + "shoulder_lift_joint", Vector3.up);
             JointAxis_Dictionary.Add(prefix + "elbow_joint", Vector3.up);
-            JointAxis_Dictionary.Add(prefix + "wrist_1_joint",  Vector3.up);
+            JointAxis_Dictionary.Add(prefix + "wrist_1_joint", Vector3.up);
             JointAxis_Dictionary.Add(prefix + "wrist_2_joint", Vector3.forward);
             JointAxis_Dictionary.Add(prefix + "wrist_3_joint", Vector3.up);
 
@@ -61,21 +63,29 @@ namespace RosSharp.RosBridgeClient
                 ProcessMessage();
         }
 
-        public void Write(MessageTypes.Control.JointTrajectoryControllerState message)
+        public void Write(MessageTypes.Moveit.DisplayTrajectory message)
         {
-            _jointNames = message.joint_names;
-            _positions =  message.desired.positions;
-            _jointLength = _positions.Length;
+            _trajectory = message.trajectory;
+            _jointNames = _trajectory[0].joint_trajectory.joint_names;
+            _totalPoints = _trajectory[0].joint_trajectory.points.Length;
 
             isMessageReceived = true;
         }
 
         private void ProcessMessage()
         {
-            for (int i = 0; i < _jointLength; i++)
+            var points = _trajectory[0].joint_trajectory.points;
+
+            if (!JointName_Dictionary.ContainsKey(_jointNames[0]))
+                return;
+
+            for (int i = 0; i < _totalPoints; i++)
             {
-                var arm_transform = JointName_Dictionary[_jointNames[i]];
-                arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[i]], -1 * (float)_positions[i] + JointOffset_Dictionary[_jointNames[i]]);
+                for (int j = 0; j < _jointNames.Length; j++)
+                {
+                    var arm_transform = JointName_Dictionary[_jointNames[j]];      
+                    arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[j]], -1 * (float)points[i].positions[j] + JointOffset_Dictionary[_jointNames[j]]);
+                }
             }
 
             isMessageReceived = false;
@@ -83,7 +93,6 @@ namespace RosSharp.RosBridgeClient
 
         private Vector3 UpdateArmOrientation(Vector3 axis, float position)
         {
-            //positions are in radians; convert to degrees
             if (position < 0)
                 return axis * (position + 2 * (float)Math.PI) * (180.0f / (float)Math.PI);
             else
@@ -91,3 +100,4 @@ namespace RosSharp.RosBridgeClient
         }
     }
 }
+
