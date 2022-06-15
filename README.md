@@ -1,6 +1,6 @@
 # Unity DAURAR (Dual-Arm-Universal-Robot5-Augmented-Reality)
 
-### This repo is the Unity component for the DAURAR project for the Dual-Arm UR5 manipulators in the MuLIP lab at Tufts University. [ROS_DAURAR](https://github.com/DreVinciCode/ROS_DAURAR)
+### This repo is the Unity component for the DAURAR project for the Dual-Arm UR5 manipulators in the MuLIP lab at Tufts University. [ROS_DAURAR](https://github.com/DreVinciCode/ROS_DAURAR) is the ROS component of the project.
 
 I didn't have enough git lfs storage for the vuforia *.tgz file.
 Used USB drive to manually transfered file and added file type to gitignore file.
