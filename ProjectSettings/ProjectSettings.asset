@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DreVinciCreations
-  productName: UR5
+  productName: DAURAR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -135,7 +135,16 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 4646502849695471892, guid: ed9a1a5e02b6b914c9e1faa1585b1aa1, type: 2}
+  - {fileID: 917270167521966899, guid: e707b1953ea585845b74eba25c35575b, type: 2}
+  - {fileID: 5783483657996134161, guid: 74e7f2f64c89a874899efa97276762ef, type: 2}
+  - {fileID: 0}
   metroInputSource: 1
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -707,11 +716,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template3D
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DreVinciCreations
+  metroCertificateIssuer: DreVinciCreations
+  metroCertificateNotAfter: 803a4059d5a0d901
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: DualArmUR5Frame
@@ -729,6 +738,7 @@ PlayerSettings:
   platformCapabilities:
     WindowsStoreApps:
       GazeInput: True
+      InternetClientServer: True
       SpatialPerception: True
       InternetClient: True
       WebCam: True

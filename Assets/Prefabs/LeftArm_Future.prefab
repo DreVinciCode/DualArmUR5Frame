@@ -266,6 +266,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26af3349b992f864298d66bad6779f18, type: 3}
   m_PrefabInstance: {fileID: 4228937850467305885}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6282478466225689959 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1324079796520313606, guid: 26af3349b992f864298d66bad6779f18, type: 3}
+  m_PrefabInstance: {fileID: 4228937850467305885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5215226823696379026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8273114420763960591, guid: 26af3349b992f864298d66bad6779f18, type: 3}
+  m_PrefabInstance: {fileID: 4228937850467305885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &544616550147522670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4810150837880272397, guid: 26af3349b992f864298d66bad6779f18, type: 3}
+  m_PrefabInstance: {fileID: 4228937850467305885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6656798495230764989 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7408850642763738656, guid: 26af3349b992f864298d66bad6779f18, type: 3}
+  m_PrefabInstance: {fileID: 4228937850467305885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1458564480551827794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5868779397631840049, guid: 26af3349b992f864298d66bad6779f18, type: 3}
+  m_PrefabInstance: {fileID: 4228937850467305885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6066653622750210350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1260689301481316173, guid: 26af3349b992f864298d66bad6779f18, type: 3}
@@ -283,6 +308,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b5e865fe6d6643b2f86b71fbfe290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefix: left_
+  Shoulder_Pan: {fileID: 6282478466225689959}
+  Shoulder_Lift: {fileID: 5215226823696379026}
+  Elbow: {fileID: 544616550147522670}
+  Wrist_1: {fileID: 6656798495230764989}
+  Wrist_2: {fileID: 1458564480551827794}
+  Wrist_3: {fileID: 6066653622750210350}
+  Shoulder_Pan_Offset_Position: 3.1415927
+  Shoulder_Lift_Offset_Position: 1.570796
+  Elbow_Offset_Position: 0
+  Wrist_1_Offset_Position: 1.570796
+  Wrist_2_Offset_Position: 0
+  Wrist_3_Offset_Position: 0.7853982
 --- !u!1001 &4228937850920482288
 PrefabInstance:
   m_ObjectHideFlags: 0

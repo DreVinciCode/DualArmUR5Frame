@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b5e865fe6d6643b2f86b71fbfe290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefix: 
+  prefix: right_
   Shoulder_Pan: {fileID: 2781520585761890918}
   Shoulder_Lift: {fileID: 4167553652777065363}
   Elbow: {fileID: 8518830277563119471}
@@ -369,4 +369,4 @@ MonoBehaviour:
   Elbow_Offset_Position: 0
   Wrist_1_Offset_Position: -1.570796
   Wrist_2_Offset_Position: 0
-  Wrist_3_Offset_Position: 0.7853982
+  Wrist_3_Offset_Position: -0.7853982
