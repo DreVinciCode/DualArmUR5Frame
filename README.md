@@ -9,3 +9,16 @@ Used USB drive to manually transfered file and added file type to gitignore file
 <br/> Short demos of Current Progress
 
 ## Project is deployed on Andriod 
+
+
+ROS Sharp package: https://github.com/DreVinciCode/ros-sharp (Forked from modified repo for compatability for UWP)
+Place both RosSharp folder and Plugins folder into Unity Assets folder.
+
+
+## Important Configuration Settings
+
+ROS Connector (Script) 
+-Set Serializer to Newtonsoft_JSON
+-Set Protocol to Web Socket UWP
+
+In Publisher Settings also checkbox "PrivateNetworkClientServer",  "InternetClientSever" , and "InternetClient"
