@@ -208,6 +208,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7408850642763738656, guid: 26af3349b992f864298d66bad6779f18, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408850642763738656, guid: 26af3349b992f864298d66bad6779f18, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
@@ -296,7 +300,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8454539899438811562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e8fbdd0876eb0e4fbc7598e2c3dba8f, type: 3}
   m_Name: 
@@ -309,8 +313,8 @@ MonoBehaviour:
   Wrist_2: {fileID: 6275782384745055284}
   Wrist_3: {fileID: 1663173158703060040}
   Shoulder_Pan_Offset_Position: 3.1415927
-  Shoulder_Lift_Offset_Position: 1.5707964
+  Shoulder_Lift_Offset_Position: -1.570796
   Elbow_Offset_Position: 0
-  Wrist_1_Offset_Position: 1.5707964
+  Wrist_1_Offset_Position: -1.570796
   Wrist_2_Offset_Position: 0
   Wrist_3_Offset_Position: -0.7853982
