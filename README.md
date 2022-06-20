@@ -5,10 +5,13 @@
 I didn't have enough git lfs storage for the vuforia *.tgz file.
 Used USB drive to manually transfered file and added file type to gitignore file.
 
-![Alt text](demos/future_plan.gif)
-<br/> Short demos of Current Progress
+![Alt text](demos/demo_hololens.gif)
+<br/> Viewed on a Hololens2 Device
 
-## Project is deployed on Andriod 
+![Alt text](demos/future_plan.gif)
+<br/> Viewed on an Android Device
+
+## Project is deployed on Andriod and Hololens2
 
 
 ROS Sharp package: https://github.com/DreVinciCode/ros-sharp (Forked from modified repo for compatability for UWP)
