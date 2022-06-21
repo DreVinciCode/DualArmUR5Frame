@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: AfPH44L/////AAABmdy9eVvDBkJXtvig7BqJF6xU+ewFYG3GPyow3PXRppro0ePXWGPMUF/Q0WAdWvftliV/aHcTLJ3UBneEJxf0anJIc1yqT8fBAOr73DXlH0Q+Z8KTQFqpbVv2oEu/9l66aUi4GjDqNdmFvJW2gpLf9702pSse/7xq9rbHwmVoqk32b9Hrv6pmp7H8NCiWlc/iUIii6HtypQ4lYz6zieCMk8+GEGIkEARS80afUNjSzYZf5CRJBhlcLfVHeJ4bar7DrnVCQ8uIPq5iYPaIuOjCc47LnH6bnIpWp86MXxnUaidrhE2rGoacOBztsQDHm1Nm8NP/AeYTVnoQdheVITKJ46ZMaWBlv8G1WJvrMB0bPF+A
-    ufoLicenseKey: QWU1UW9TUC8vLy8vQUFBQUtDR09SeXg5R0VvS2lPNFJDaXNnKzRXVTB4QWxoQW5HTEJzOWJaK0k3Y3lKTUc3WnV6cVFmdDRhT1ozTXpwLzRhOVJvQ0xvT0RkbGM3R2JDREdXZjNVc3pKU1FKTURGT0JmeTV4cU4zNm5rUXc2TUhwakUwU3h3TmR5eURham5pK3pFT0pSWUVYaVo2dGNoaEo5TnRjOG5BK2VqYnB3ZWVZR0hma2lIS1A1NWphelJyaUNjclJCSk9YQ3JBVytUM3Bkc1lvWjEwNVFWcTNyQkhDNGNuNnBUdmd1NHZ2Vlp3alo5RUhQZ3l4Q3A5WWplMWlHdS9VTHcrTmhoRm9YNlNvZTdEczAxenhhQ3hCVkI4U2M5eWh3aUxoT2p0WUtwcnowZkhBL0VaaVhBd05US3FpMHptTXUxK0xLUlB1eExob0FUK3ByUDVrMVNYelNvZUFEb21ERnNLZ2QyY0FvdlFZN1MzVDg1S0dLZmo=
+    ufoLicenseKey: QVhiM0Y1Ly8vLy8vQUFBQUtPbnFIeHJFSGs1N3VrMlg4U050eVBzK2pkOFZxMDhrazlwYjBsYS9aZUIxQlV1ckZWcWt0ZllSQWpnT2tIRlY2VzdOMDRTRjNYRUhmbTF5L1BnYlB4eWdHWEF6RUNheXowc3dyNVNYa2ozdERuRjhka1FpOHRscHdkMDcrcEJEY1FjTjNJcUM1bEgwOTYzQkdZdjRsQStRb0hSQU9nRGthelp5TlY0WHVwWU9EaE05NWw5bXAzbnBDMjM5MWZBWXBFdEdiL2loTDNab3N4b25ZblhjK1JtSS9wLzRoTDIwVGhmTXR6WFJNYkpUTXZLZzJoQ0N0TEJXNEptZ0pSOUtSdStzQWM3QjVNOWFFMGVHQ1dUT1VRSUUweEpiZC9ZL2cvS29iNDhBRXdQOGFwbWR5NmRWU0FHU2psVzRZY2FEU2Zud3J1ZHhucVNmSUZiajNTUnIzM0lKVlFIaW1rL0oyOGNFeDdyekcySXg=
     delayedInitialization: 0
     cameraFocusModeSetting: 2
     cameraDeviceModeSetting: -1
@@ -23,7 +23,7 @@ MonoBehaviour:
     modelTargetRecoWhileExtendedTracked: 1
     shareRecordingsInITunes: 0
     version: 10.7.2
-    eulaAcceptedVersions: '{"Values":["10.2","0.0","8.0","7.1","7.2","7.5","8.1","7.7","7.9","8.2","8.3","9.8","10.3","10.4","10.5","10.6","10.7"]}'
+    eulaAcceptedVersions: '{"Values":["7.5","8.0","8.1","7.1","7.2","8.3","0.0","7.7","7.9","8.2","9.8","10.2","10.3","10.4","10.5","10.6","10.7"]}'
   database:
     disableModelExtraction: 0
   shaders:
@@ -36,7 +36,7 @@ MonoBehaviour:
   deviceTracker:
     autoStartTracker: 1
     arcoreRequirement: 1
-    autoImportArcore: 0
+    autoImportArcore: 1
     thirdPartyARCoreClientDetected: 0
   playmode:
     mSequencePath: 
