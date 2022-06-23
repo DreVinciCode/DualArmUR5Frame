@@ -14,6 +14,9 @@ namespace RosSharp.RosBridgeClient
         private string[] _jointNames;
         private int _totalPoints;
 
+        private double _totalTime;
+        private float _stopWatch = 0;
+
         public string prefix = "";
         public Transform Shoulder_Pan;
         public Transform Shoulder_Lift;
@@ -61,6 +64,14 @@ namespace RosSharp.RosBridgeClient
         {
             if (isMessageReceived)
                 ProcessMessage();
+
+
+
+            _stopWatch += Time.fixedDeltaTime;
+            if (_stopWatch >= _totalTime)
+            {
+                _stopWatch = 0;
+            }
         }
 
         public void Write(MessageTypes.Moveit.DisplayTrajectory message)
@@ -68,27 +79,24 @@ namespace RosSharp.RosBridgeClient
             _trajectory = message.trajectory;
             _jointNames = _trajectory[0].joint_trajectory.joint_names;
             _totalPoints = _trajectory[0].joint_trajectory.points.Length;
-
+            _totalTime = _trajectory[0].joint_trajectory.points[_totalPoints - 1].time_from_start.secs + _trajectory[0].joint_trajectory.points[_totalPoints - 1].time_from_start.nsecs * 1e-9;
             isMessageReceived = true;
         }
 
         private void ProcessMessage()
         {
-            var points = _trajectory[0].joint_trajectory.points;
 
             if (!JointName_Dictionary.ContainsKey(_jointNames[0]))
                 return;
 
-            for (int i = 0; i < _totalPoints; i++)
+            double[] durationSets = new double[_totalPoints];
+            
+            for (int i = 1; i < _totalPoints; i++)
             {
-                for (int j = 0; j < _jointNames.Length; j++)
-                {
-                    var arm_transform = JointName_Dictionary[_jointNames[j]];      
-                    arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[j]], -1 * (float)points[i].positions[j] + JointOffset_Dictionary[_jointNames[j]]);
-                }
-            }
+                durationSets[i] = (_trajectory[0].joint_trajectory.points[i].time_from_start.secs + (_trajectory[0].joint_trajectory.points[i].time_from_start.nsecs * 1e-9)) - (_trajectory[0].joint_trajectory.points[i - 1].time_from_start.secs + (_trajectory[0].joint_trajectory.points[i - 1].time_from_start.nsecs * 1e-9));
+                StartCoroutine(AnimateTrajectory((float)durationSets[i], i));
 
-            isMessageReceived = false;
+            }
         }
 
         private Vector3 UpdateArmOrientation(Vector3 axis, float position)
@@ -97,6 +105,16 @@ namespace RosSharp.RosBridgeClient
                 return axis * (position + 2 * (float)Math.PI) * (180.0f / (float)Math.PI);
             else
                 return axis * position * (180.0f / (float)Math.PI);
+        }
+
+        IEnumerator AnimateTrajectory(float duration, int joint)
+        {
+            yield return new WaitForSeconds(1);
+            for (int k = 0; k < _jointNames.Length; k++)
+            {
+                var arm_transform = JointName_Dictionary[_jointNames[k]];
+                arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[k]], -1 * (float)_trajectory[0].joint_trajectory.points[joint].positions[k] + JointOffset_Dictionary[_jointNames[k]]);
+            }    
         }
     }
 }
