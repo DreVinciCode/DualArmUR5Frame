@@ -9,10 +9,11 @@ namespace RosSharp.RosBridgeClient
     {
         private bool isMessageReceived;
         private MessageTypes.Moveit.RobotTrajectory[] _trajectory;
-        
-        private float[] _positions;
         private string[] _jointNames;
         private int _totalPoints;
+        private double _totalTime;
+        private float _stopWatch = 0;
+        private int _currentPointPosition;
 
         public string prefix = "";
         public Transform Shoulder_Pan;
@@ -60,7 +61,13 @@ namespace RosSharp.RosBridgeClient
         private void Update()
         {
             if (isMessageReceived)
+            {
+                _stopWatch += Time.deltaTime;
+                if(_stopWatch >= _totalTime)               
+                    _stopWatch = 0;
+
                 ProcessMessage();
+            }
         }
 
         public void Write(MessageTypes.Moveit.DisplayTrajectory message)
@@ -68,27 +75,22 @@ namespace RosSharp.RosBridgeClient
             _trajectory = message.trajectory;
             _jointNames = _trajectory[0].joint_trajectory.joint_names;
             _totalPoints = _trajectory[0].joint_trajectory.points.Length;
-
+            _totalTime = _trajectory[0].joint_trajectory.points[_totalPoints - 1].time_from_start.secs + _trajectory[0].joint_trajectory.points[_totalPoints - 1].time_from_start.nsecs * 1e-9;
             isMessageReceived = true;
         }
 
         private void ProcessMessage()
-        {
-            var points = _trajectory[0].joint_trajectory.points;
-
+        {    
             if (!JointName_Dictionary.ContainsKey(_jointNames[0]))
                 return;
+            
+            _currentPointPosition = (int)Mathf.Lerp(0, _totalPoints, _stopWatch / (float)_totalTime);
 
-            for (int i = 0; i < _totalPoints; i++)
+            for (int k = 0; k < _jointNames.Length; k++)
             {
-                for (int j = 0; j < _jointNames.Length; j++)
-                {
-                    var arm_transform = JointName_Dictionary[_jointNames[j]];      
-                    arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[j]], -1 * (float)points[i].positions[j] + JointOffset_Dictionary[_jointNames[j]]);
-                }
+                var arm_transform = JointName_Dictionary[_jointNames[k]];
+                arm_transform.localEulerAngles = UpdateArmOrientation(JointAxis_Dictionary[_jointNames[k]], -1 * (float)_trajectory[0].joint_trajectory.points[_currentPointPosition].positions[k] + JointOffset_Dictionary[_jointNames[k]]);
             }
-
-            isMessageReceived = false;
         }
 
         private Vector3 UpdateArmOrientation(Vector3 axis, float position)
