@@ -5,7 +5,7 @@
 I didn't have enough git lfs storage for the vuforia *.tgz file.
 Used USB drive to manually transfered file and added file type to gitignore file.
 
-![Alt text](demos/demo_hololens.gif)
+![Alt text](demos/animatedTrajectory.gif)
 <br/> Viewed on a Hololens2 Device
 
 ![Alt text](demos/future_plan.gif)
