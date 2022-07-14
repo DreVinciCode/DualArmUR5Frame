@@ -721,8 +721,20 @@ PrefabInstance:
       value: -1.46
       objectReference: {fileID: 0}
     - target: {fileID: 7586189910418841315, guid: 9bdbfaf77e85f2d448f9b5dede412cb5, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586189910418841315, guid: 9bdbfaf77e85f2d448f9b5dede412cb5, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 49210914}
+    - target: {fileID: 7586189910418841315, guid: 9bdbfaf77e85f2d448f9b5dede412cb5, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586189910418841315, guid: 9bdbfaf77e85f2d448f9b5dede412cb5, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7871228094647091822, guid: 9bdbfaf77e85f2d448f9b5dede412cb5, type: 3}
@@ -2723,7 +2735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SecondsTimeout: 10
   Serializer: 1
-  protocol: 1
+  protocol: 2
   RosBridgeServerUrl: ws://10.5.0.32:9090
 --- !u!4 &1176506161
 Transform:
