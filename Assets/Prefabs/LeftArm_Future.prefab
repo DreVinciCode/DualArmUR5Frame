@@ -283,6 +283,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928b5e865fe6d6643b2f86b71fbfe290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefix: 
+  Shoulder_Pan: {fileID: 0}
+  Shoulder_Lift: {fileID: 0}
+  Elbow: {fileID: 0}
+  Wrist_1: {fileID: 0}
+  Wrist_2: {fileID: 0}
+  Wrist_3: {fileID: 0}
+  Shoulder_Pan_Offset_Position: 3.1415927
+  Shoulder_Lift_Offset_Position: 1.5707964
+  Elbow_Offset_Position: 0
+  Wrist_1_Offset_Position: 1.5707964
+  Wrist_2_Offset_Position: 0
+  Wrist_3_Offset_Position: -0.7853982
 --- !u!1001 &4228937850920482288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,15 +321,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fa745efabe671a4ca9b562db55fa5e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.000003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fa745efabe671a4ca9b562db55fa5e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.000722
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fa745efabe671a4ca9b562db55fa5e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.000003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fa745efabe671a4ca9b562db55fa5e6, type: 3}
       propertyPath: m_LocalRotation.w
