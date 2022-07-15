@@ -11,6 +11,9 @@ namespace RosSharp.RosBridgeClient
         private string[] _jointNames;
         private double[] _jointPositions;
 
+        public string _right_prefix = "right_";
+        public string _left_prefix = "left_";
+
         public Transform Right_Shoulder_Pan;
         public Transform Right_Shoulder_Lift;
         public Transform Right_Elbow;
@@ -46,26 +49,26 @@ namespace RosSharp.RosBridgeClient
         private void Start()
         {
             
-            JointName_Dictionary.Add("right_shoulder_pan_joint", Right_Shoulder_Pan);
-            JointName_Dictionary.Add("right_shoulder_lift_joint", Right_Shoulder_Lift);
-            JointName_Dictionary.Add("right_elbow_joint", Right_Elbow);
-            JointName_Dictionary.Add("right_wrist_1_joint", Right_Wrist_1);
-            JointName_Dictionary.Add("right_wrist_2_joint", Right_Wrist_2);
-            JointName_Dictionary.Add("right_wrist_3_joint", Right_Wrist_3);
+            JointName_Dictionary.Add(_right_prefix + "shoulder_pan_joint", Right_Shoulder_Pan);
+            JointName_Dictionary.Add(_right_prefix + "shoulder_lift_joint", Right_Shoulder_Lift);
+            JointName_Dictionary.Add(_right_prefix + "elbow_joint", Right_Elbow);
+            JointName_Dictionary.Add(_right_prefix + "wrist_1_joint", Right_Wrist_1);
+            JointName_Dictionary.Add(_right_prefix + "wrist_2_joint", Right_Wrist_2);
+            JointName_Dictionary.Add(_right_prefix + "wrist_3_joint", Right_Wrist_3);
 
-            JointAxis_Dictionary.Add("right_shoulder_pan_joint", Vector3.forward);
-            JointAxis_Dictionary.Add("right_shoulder_lift_joint", Vector3.up);
-            JointAxis_Dictionary.Add("right_elbow_joint", Vector3.up);
-            JointAxis_Dictionary.Add("right_wrist_1_joint", Vector3.up);
-            JointAxis_Dictionary.Add("right_wrist_2_joint", Vector3.forward);
-            JointAxis_Dictionary.Add("right_wrist_3_joint", Vector3.up);
+            JointAxis_Dictionary.Add(_right_prefix + "shoulder_pan_joint", Vector3.forward);
+            JointAxis_Dictionary.Add(_right_prefix + "shoulder_lift_joint", Vector3.up);
+            JointAxis_Dictionary.Add(_right_prefix + "elbow_joint", Vector3.up);
+            JointAxis_Dictionary.Add(_right_prefix + "wrist_1_joint", Vector3.up);
+            JointAxis_Dictionary.Add(_right_prefix + "wrist_2_joint", Vector3.forward);
+            JointAxis_Dictionary.Add(_right_prefix + "wrist_3_joint", Vector3.up);
 
-            JointOffset_Dictionary.Add("right_shoulder_pan_joint", Right_Shoulder_Pan_Offset_Position);
-            JointOffset_Dictionary.Add("right_shoulder_lift_joint", Right_Shoulder_Lift_Offset_Position);
-            JointOffset_Dictionary.Add("right_elbow_joint", Right_Elbow_Offset_Position);
-            JointOffset_Dictionary.Add("right_wrist_1_joint", Right_Wrist_1_Offset_Position);
-            JointOffset_Dictionary.Add("right_wrist_2_joint", Right_Wrist_2_Offset_Position);
-            JointOffset_Dictionary.Add("right_wrist_3_joint", Right_Wrist_3_Offset_Position);
+            JointOffset_Dictionary.Add(_right_prefix + "shoulder_pan_joint", Right_Shoulder_Pan_Offset_Position);
+            JointOffset_Dictionary.Add(_right_prefix + "shoulder_lift_joint", Right_Shoulder_Lift_Offset_Position);
+            JointOffset_Dictionary.Add(_right_prefix + "elbow_joint", Right_Elbow_Offset_Position);
+            JointOffset_Dictionary.Add(_right_prefix + "wrist_1_joint", Right_Wrist_1_Offset_Position);
+            JointOffset_Dictionary.Add(_right_prefix + "wrist_2_joint", Right_Wrist_2_Offset_Position);
+            JointOffset_Dictionary.Add(_right_prefix + "wrist_3_joint", Right_Wrist_3_Offset_Position);
 
             JointName_Dictionary.Add("left_shoulder_pan_joint", Left_Shoulder_Pan);
             JointName_Dictionary.Add("left_shoulder_lift_joint", Left_Shoulder_Lift);
